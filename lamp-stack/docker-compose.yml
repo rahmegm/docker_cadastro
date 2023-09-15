@@ -17,8 +17,8 @@ services:
 
 
   web:
-    #image: php:8.2-apache
-    build: .
+    #image: php:8.2-apache (builda usando o dockerfile) build: . 
+    build: . 
     container_name: php_web
     depends_on:
       - db
@@ -26,8 +26,8 @@ services:
       - ./php/:/var/www/html/
     ports:
       - "8100:80"
-    stdin_open: true
-    tty: true
+    # stdin_open: true
+    # tty: true
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
