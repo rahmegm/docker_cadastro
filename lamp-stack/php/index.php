@@ -8,9 +8,9 @@
         
         <!-- início php -->
         <?php
-            echo "Inicio";
+            // echo "Inicio";
             $con = mysqli_connect("db","root","root","test_db");
-            echo "<br>Conectei ...";
+            // echo "<br>Conectei ...";
 
             // Check connection
             if (mysqli_connect_errno()) {
@@ -18,19 +18,20 @@
             exit();
             }
 
-            echo "<br>Verificando método ...<br>";
+            // echo "<br>Verificando método ...<br>";
             if( $_GET )
             {
-                echo "Indo pelo GET";
+                // echo "Indo pelo GET";
                 $nome =  $_GET['nome'];
                 $RA = $_GET['RA'];
                 $password =  $_GET['senha'];
 
                 $sql = "INSERT INTO cadastro (nome, RA, password) VALUES ('$nome', '$RA', '$password')";
                 mysqli_query($con, $sql);
-            }elseif( $_POST )
+            }
+            elseif( $_POST )
             {
-                echo "Indo pelo POST";
+                // echo "Indo pelo POST";
                 $nome =  $_POST['nome'];
                 $RA = $_POST['RA'];
                 $password =  $_POST['senha'];
@@ -38,10 +39,10 @@
                 $sql = "INSERT INTO cadastro (nome, RA, password) VALUES ('$nome', '$RA', '$password')";
                 mysqli_query($con, $sql);
             }
-            else echo "<br>Nenhum método escolhido ... <br>";
-
+            else 
+            // echo "<br>Nenhum método escolhido ... <br>"-->;
             mysqli_close($con);
-            echo "<br>Fechei conexão ... <br>"
+            // echo "<br>Fechei conexão ... <br>"
         ?>
         <!-- fim php -->
 

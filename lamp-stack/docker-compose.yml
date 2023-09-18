@@ -5,7 +5,7 @@ version: '3'
 services:
   db:
     image: mysql:latest
-    environment:
+    environment:      # environment são requisitos para rodar a imagem
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
       MYSQL_USER: devuser
@@ -20,16 +20,16 @@ services:
     #image: php:8.2-apache (builda usando o dockerfile) build: . 
     build: . 
     container_name: php_web
-    depends_on:
+    depends_on:     # depende de algo, no caso do db
       - db
     volumes:
-      - ./php/:/var/www/html/
+      - ./php/:/var/www/html/     # volume ./pasta pc/:/caminho docker/
     ports:
-      - "8100:80"
+      - "8100:80"     # porta 8100 é a do computador e a 80 é o padrão web do docker
     # stdin_open: true
     # tty: true
 
-  phpmyadmin:
+  phpmyadmin:     # imagem que faz conexão php com sql, sem precisar de um programa sql externo
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     environment:
