@@ -5,7 +5,7 @@ version: '3'
 services:
   db:
     image: mysql:latest
-    environment:      # environment são requisitos para rodar a imagem
+    environment:      # environment são requisitos para rodar o container
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
       MYSQL_USER: devuser
