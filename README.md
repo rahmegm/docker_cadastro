@@ -48,16 +48,14 @@ https://github.com/rahmegm/docker_cadastro.git
     ```sh
     root
     ```
-12. no banco de dados
-    importar o database que está na pasta banco de nome teste.db
-13. após abrir outra aba no browser
+12. após abrir outra aba no browser
     digite
      ```sh
      localhost:8100
     ```
-14. dentro do localhost:8100
+13. dentro do localhost:8100
     fazer o cadastro do aluno utilizando os campos fornecidos e finalizar apertando o botão cadastro
-15. atualizar o banco de dados apertando f5 para observar a mudança
+14. atualizar o banco de dados apertando f5 para observar a mudança
 # Para fechar os containers
 1. digite no cmd
    ```sh
